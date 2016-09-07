@@ -1,0 +1,33 @@
+{
+  "name": "classroom-manager",
+  "homepage": "https://github.com/comrww/classroom-manager",
+  "authors": [
+    "comrww"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "ui-router#^0.3.1",
+    "bootstrap": "^3.3.7",
+    "toastr": "^2.1.3",
+    "materialize": "^0.97.7"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css",
+        "less/bootstrap.less"
+      ]
+    }
+  }
+}
