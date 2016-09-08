@@ -1,14 +1,12 @@
 <!DOCTYPE HTML>
-<header>
-	
-</header>
-
+<html ng-app="app">
 	<head>
-		<title>This is the title</title>
+		<title>Classroom Management System</title>
 
 		<!-- bower:css -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-		<link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+		<link rel="stylesheet" href="bower_components/materialize/bin/materialize.css" />
+		<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
 		<!-- endbower -->
 
 		<!-- inject:css -->
@@ -20,20 +18,23 @@
 
 			<div class="navbar navbar-inverse">
 				<div class="container-fluid">
-					<a href="" class="navbar-brand">Classroom Manager</a>
+					<a class="navbar-brand">CMS</a>
 					<ul class="nav navbar-nav">
 						<li class="active">
-							<a href="" class="navbar-brand">Dashboard</a>
+							<a ui-sref="dashboard" class="navbar-brand">Dashboard</a>
 						</li>
 						<li>
-							<a href="" class="navbar-brand">Students</a>
+							<a ui-sref="student.grid" class="navbar-brand">Students</a>
 						</li>
 						<li>
-							<a href="" class="navbar-brand">Projects</a>
+							<a ui-sref="project.grid" class="navbar-brand">Projects</a>
 						</li>
 					</ul>
 				</div>
 				
+			</div>
+			<div class="container">
+				<div ui-view></div>
 			</div>
 
 			<!-- bower:js -->
@@ -41,10 +42,12 @@
 			<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 			<script src="bower_components/jquery/dist/jquery.js"></script>
 			<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-			<script src="bower_components/toastr/toastr.js"></script>
+			<script src="bower_components/materialize/bin/materialize.js"></script>
+			<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
 			<!-- endbower -->
 
 			<!-- inject:js -->
+			<script src="/app/app.module.js"></script>
 			<!-- endinject -->
 
 		</body>

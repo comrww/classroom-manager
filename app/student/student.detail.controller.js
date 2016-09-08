@@ -3,14 +3,14 @@
 
     angular
         .module('app')
-        .controller('DashboardController', DashboardController);
+        .controller('StudentDetailController', StudentDetailController);
 
-    DashboardController.$inject = [];
+    StudentDetailController.$inject = [];
 
     /* @ngInject */
-    function DashboardController() {
+    function StudentDetailController() {
         var vm = this;
-        vm.title = 'DashboardController';
+        vm.title = 'StudentDetailController';
 
         activate();
 
