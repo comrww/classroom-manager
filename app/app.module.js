@@ -6,7 +6,8 @@
 	      'ui.router',
 	      'toastr'
 	  ])
-	  .config(appConfig);
+	  .config(appConfig)
+	  .value('apiUrl', 'http://localhost:50493/api/');
 
 	  function appConfig($urlRouterProvider, $stateProvider) {
 	  		$urlRouterProvider.otherwise('dashboard');

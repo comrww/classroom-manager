@@ -1,3 +1,59 @@
-This is the project detail
 
-{{projectDetail.projectId}}
+<div ng-show="projectDetail.project.projectId">
+<div class="card-panel">
+  <h5>
+    Add Student
+  </h5>
+  <div>
+    <div>
+      <label for="">Select a Student</label>
+        <div input-field>
+        <select class="browser-default" name="" id="" ng-options="s.studentId as s.firstName + ' ' + s.lastName for s in projectDetail.students" ng-model="projectDetail.studentId">
+        </select>
+        </div>
+          <button class="btn grey" ng-click="projectDetail.assignProject()" type="button">Assign</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card-panel" ng-show="projectDetail.project.projectId">
+  <h5>
+    Students on Project
+  </h5>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Grade</th>
+          <th width="1%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="assignment in projectDetail.project.assignments">
+          <td>{{assignment.student.firstName}} {{assignment.student.lastName}}</td>
+          <td>{{assignment.grade}}</td>
+          <td><button class="btn red">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="card-panel">
+  <h5>
+    Edit Project
+  </h5>
+  <div>
+    <div>
+      <label for="">Name</label>
+      <input type="text" ng-model="projectDetail.project.name">
+    </div>
+    <div>
+      <label for="">Description</label>
+      <textarea ng-model="projectDetail.project.description"></textarea>
+    </div>
+  </div>
+  <div>
+    <button class="btn grey" ng-click="projectDetail.save()">Save</button>
+  </div>
+</div>

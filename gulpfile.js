@@ -16,7 +16,7 @@ gulp.task('watch', function() {
     gulp.watch(htmlSources, ['html']);
 });
 
-var paths = ['./bower_components/','./app/*.js','./app/**/*.css'];
+var paths = ['./bower_components/','./app/**/*.js','./app/**/*.css'];
 
 gulp.task('injectables', function() {
     var sources = gulp.src(paths, {read: false});
@@ -51,7 +51,7 @@ gulp.task('connect', function() {
 gulp.task('app', function(){
     var options = {
         uri: 'http://localhost:8080',
-        app: 'Google Chrome'
+        app: 'Chrome'
     };
     gulp.src('index.html')
         .pipe(open(options));

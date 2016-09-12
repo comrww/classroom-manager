@@ -1,1 +1,72 @@
-Student Detail
+<div ng-show="studentDetail.student.studentId">
+  <div class="card-panel">
+  <h5>Projects</h5>
+  
+  <div class="panel-body">
+    <div class="form-group">
+      <label for="">Select a Project</label>
+      <div input-field>
+        <select class="browser-default" name="" id="" class="form-control" ng-options="p.projectId as p.name for p in studentDetail.projects" ng-model="studentDetail.projectId"></select>
+        <div class="input-group-btn">
+          <button ng-click="studentDetail.assignProject()" type="button" class="btn grey">Assign</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="card-panel" ng-show="studentDetail.student.studentId">
+  <h5>
+    Assignments
+  </h5>
+  <div class="panel-body">
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Grade</th>
+          <th width="1%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="assignment in studentDetail.student.assignments">
+          <td>{{assignment.project.name}}</td>
+          <td>{{assignment.grade}}</td>
+		  <td><button class="btn red">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="card-panel">
+  <h5>
+    Student Information
+  </h5>
+  <div>
+    <div>
+      <div>
+        <div>
+          <label for="">First Name</label>
+          <input type="text" ng-model="studentDetail.student.firstName">
+        </div>
+      </div>
+      <div>
+        <div>
+          <label for="">Last Name</label>
+          <input type="text" ng-model="studentDetail.student.lastName">
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="">Email Address</label>
+      <input ng-model="studentDetail.student.emailAddress">
+    </div>
+    <div>
+      <label for="">Telephone</label>
+      <input type="text" ng-model="studentDetail.student.telephone">
+    </div>
+  </div>
+  <div>
+    <button class="btn grey" ng-click="studentDetail.save()">Save</button>
+  </div>
+</div>

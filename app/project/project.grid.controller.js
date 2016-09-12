@@ -5,10 +5,10 @@
         .module('app')
         .controller('ProjectGridController', ProjectGridController);
 
-    ProjectGridController.$inject = [];
+    ProjectGridController.$inject = ['projectService'];
 
     /* @ngInject */
-    function ProjectGridController() {
+    function ProjectGridController(projectService) {
         var vm = this;
         vm.title = 'ProjectGridController';
 
@@ -17,6 +17,11 @@
         ////////////////
 
         function activate() {
+            projectService.getAll().then(
+                function(projects) {
+                    vm.projects = projects;
+                }
+            );
         }
     }
 })();

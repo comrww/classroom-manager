@@ -4,10 +4,11 @@
 		<title>Classroom Management System</title>
 
 		<!-- bower:css -->
-		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="bower_components/materialize/bin/materialize.css" />
 		<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
 		<!-- endbower -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 		<!-- inject:css -->
 		<!-- endinject -->
@@ -16,23 +17,23 @@
 
 		<body>
 
-			<div class="navbar navbar-inverse">
-				<div class="container-fluid">
-					<a class="navbar-brand">CMS</a>
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a ui-sref="dashboard" class="navbar-brand">Dashboard</a>
-						</li>
-						<li>
-							<a ui-sref="student.grid" class="navbar-brand">Students</a>
-						</li>
-						<li>
-							<a ui-sref="project.grid" class="navbar-brand">Projects</a>
-						</li>
-					</ul>
+			<nav>
+				<div class="nav-wrapper blue">
+					<a href="#" class="brand-logo center">CMS</a>
+						<ul id="nav-mobile" class="left hide-on-med-and-down">
+							<li>
+								<a ui-sref="dashboard">Dashboard</a>
+							</li>
+							<li>
+								<a ui-sref="student.grid">Students</a>
+							</li>
+							<li>
+								<a ui-sref="project.grid">Projects</a>
+							</li>
+						</ul>
+					</div>
 				</div>
-				
-			</div>
+			</nav>
 			<div class="container">
 				<div ui-view></div>
 			</div>
@@ -41,13 +42,21 @@
 			<script src="bower_components/angular/angular.js"></script>
 			<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 			<script src="bower_components/jquery/dist/jquery.js"></script>
-			<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 			<script src="bower_components/materialize/bin/materialize.js"></script>
 			<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+			<script src="bower_components/angular-materialize/src/angular-materialize.js"></script>
 			<!-- endbower -->
 
 			<!-- inject:js -->
 			<script src="/app/app.module.js"></script>
+			<script src="/app/core/assignmentsService.js"></script>
+			<script src="/app/core/projectsService.js"></script>
+			<script src="/app/core/studentsService.js"></script>
+			<script src="/app/dashboard/dashboard.controller.js"></script>
+			<script src="/app/student/student.detail.controller.js"></script>
+			<script src="/app/student/student.grid.controller.js"></script>
+			<script src="/app/project/project.detail.controller.js"></script>
+			<script src="/app/project/project.grid.controller.js"></script>
 			<!-- endinject -->
 
 		</body>

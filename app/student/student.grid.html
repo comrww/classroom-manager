@@ -1,1 +1,29 @@
-Student Grid
+<div class="card-panel">
+  <h4>
+    Students
+  </h4>
+    <button class="btn grey" ui-sref="student.detail">
+      Add Student
+    </button>
+  </div>
+
+  <div class="card-panel">
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Assignments</th>
+          <th width="1%"></th>
+          <th width="1%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="student in studentGrid.students">
+          <td>{{student.firstName}} {{student.lastName}}</td>
+          <td>{{student.assignments.length}}</td>
+          <td><a ui-sref="student.detail({studentId: student.studentId})" class="btn grey">Edit</a></td>
+          <td><a ng-click="studentDetail.delete()" class="btn red">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

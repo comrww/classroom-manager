@@ -5,10 +5,10 @@
         .module('app')
         .controller('StudentGridController', StudentGridController);
 
-    StudentGridController.$inject = [];
+    StudentGridController.$inject = ['studentService', 'projectService'];
 
     /* @ngInject */
-    function StudentGridController() {
+    function StudentGridController(studentService, projectService) {
         var vm = this;
         vm.title = 'StudentGridController';
 
@@ -17,6 +17,19 @@
         ////////////////
 
         function activate() {
+            studentService.getAll().then(
+                function(students) {
+                    vm.students = students;
+                }
+            );
         }
+
+        // function delete(student) {
+        //     studentService.remove().then(
+        //         function(students) {
+        //             vm.students = students;
+        //         }
+        //     );
+        // }
     }
 })();

@@ -1,1 +1,26 @@
-This is the project grid
+<div class="card-panel">
+  
+    <h4>Projects</h4>
+    <button class="btn grey" ui-sref="project.detail">Add Project</button>
+  </div>
+  <div class="card-panel">
+    <table class="table selected">
+      <thead>
+        <tr>
+          <th>Project Name</th>
+          <th>Assigned Count</th>
+          <th width="1%"></th>
+          <th width="1%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="project in projectGrid.projects">
+          <td>{{project.name}}</td>
+          <td>{{project.assignments.length}}</td>
+          <td><a ui-sref="project.detail({projectId: project.projectId})" class="btn grey">Edit</a></td>
+          <td><a class="btn red">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
